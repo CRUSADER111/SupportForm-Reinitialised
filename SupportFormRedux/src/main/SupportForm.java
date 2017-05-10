@@ -22,7 +22,7 @@ public class SupportForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        bgAEDStaff = new javax.swing.ButtonGroup();
         pnlHome = new javax.swing.JPanel();
         lblTitleH = new javax.swing.JLabel();
         pnlHomeButtons = new javax.swing.JPanel();
@@ -32,8 +32,32 @@ public class SupportForm extends javax.swing.JFrame {
         btnLogoutH = new javax.swing.JButton();
         btnExitH = new javax.swing.JButton();
         pnlStaff = new javax.swing.JPanel();
-
-        jButton2.setText("jButton2");
+        pnlStaffDetails = new javax.swing.JPanel();
+        cbStaffListS = new javax.swing.JComboBox<>();
+        lblStaffIDS = new javax.swing.JLabel();
+        txtStaffIDS = new javax.swing.JTextField();
+        lblForenameS = new javax.swing.JLabel();
+        txtForenameS = new javax.swing.JTextField();
+        lblSurnameS = new javax.swing.JLabel();
+        txtSurnameS = new javax.swing.JTextField();
+        lblAddressS = new javax.swing.JLabel();
+        sptxtaAddressS = new javax.swing.JScrollPane();
+        txtaAddressS = new javax.swing.JTextArea();
+        lblPostcodeS = new javax.swing.JLabel();
+        txtPostcodeS = new javax.swing.JTextField();
+        lblEmailS = new javax.swing.JLabel();
+        txtEmailS = new javax.swing.JTextField();
+        lblDateOfBirthS = new javax.swing.JLabel();
+        dcDateOfBirthS = new com.toedter.calendar.JDateChooser();
+        lblPasswordCheckS = new javax.swing.JLabel();
+        pnlStaffButtons = new javax.swing.JPanel();
+        rbAddS = new javax.swing.JRadioButton();
+        rbEditS = new javax.swing.JRadioButton();
+        rbDeleteS = new javax.swing.JRadioButton();
+        btnSubmitS = new javax.swing.JButton();
+        btnStaffListS = new javax.swing.JButton();
+        btnHomeS = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -109,15 +133,211 @@ public class SupportForm extends javax.swing.JFrame {
 
         getContentPane().add(pnlHome, "pnlHome");
 
+        cbStaffListS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an Existing Staff ID..." }));
+        cbStaffListS.setToolTipText("If you need to edit your details select your ID from the drop-down list.");
+
+        lblStaffIDS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblStaffIDS.setText("Staff ID:");
+
+        txtStaffIDS.setEditable(false);
+
+        lblForenameS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblForenameS.setText("Forename:");
+
+        lblSurnameS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblSurnameS.setText("Surname:");
+
+        lblAddressS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblAddressS.setText("Address:");
+
+        txtaAddressS.setColumns(20);
+        txtaAddressS.setRows(5);
+        sptxtaAddressS.setViewportView(txtaAddressS);
+
+        lblPostcodeS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblPostcodeS.setText("Postcode:");
+
+        lblEmailS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblEmailS.setText("Email:");
+
+        lblDateOfBirthS.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblDateOfBirthS.setText("Date Of Birth:");
+
+        lblPasswordCheckS.setText("Password Set = False");
+
+        javax.swing.GroupLayout pnlStaffDetailsLayout = new javax.swing.GroupLayout(pnlStaffDetails);
+        pnlStaffDetails.setLayout(pnlStaffDetailsLayout);
+        pnlStaffDetailsLayout.setHorizontalGroup(
+            pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffDetailsLayout.createSequentialGroup()
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                                .addComponent(lblSurnameS)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSurnameS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                                .addComponent(lblAddressS)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sptxtaAddressS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffDetailsLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblForenameS, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblStaffIDS, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtStaffIDS)
+                            .addComponent(txtForenameS)
+                            .addComponent(cbStaffListS, 0, 170, Short.MAX_VALUE))))
+                .addContainerGap())
+            .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                        .addComponent(lblPostcodeS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPostcodeS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                        .addComponent(lblEmailS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmailS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                        .addComponent(lblDateOfBirthS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPasswordCheckS)
+                            .addComponent(dcDateOfBirthS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlStaffDetailsLayout.setVerticalGroup(
+            pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStaffDetailsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cbStaffListS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblStaffIDS, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStaffIDS, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblForenameS)
+                    .addComponent(txtForenameS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSurnameS)
+                    .addComponent(txtSurnameS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sptxtaAddressS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAddressS))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPostcodeS)
+                    .addComponent(txtPostcodeS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmailS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEmailS))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStaffDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(dcDateOfBirthS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblDateOfBirthS, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblPasswordCheckS)
+                .addContainerGap())
+        );
+
+        bgAEDStaff.add(rbAddS);
+        rbAddS.setSelected(true);
+        rbAddS.setText("Add");
+
+        bgAEDStaff.add(rbEditS);
+        rbEditS.setText("Edit");
+
+        bgAEDStaff.add(rbDeleteS);
+        rbDeleteS.setText("Delete");
+
+        btnSubmitS.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSubmitS.setText("Submit");
+
+        btnStaffListS.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnStaffListS.setText("Staff List");
+
+        btnHomeS.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnHomeS.setText("Home");
+
+        javax.swing.GroupLayout pnlStaffButtonsLayout = new javax.swing.GroupLayout(pnlStaffButtons);
+        pnlStaffButtons.setLayout(pnlStaffButtonsLayout);
+        pnlStaffButtonsLayout.setHorizontalGroup(
+            pnlStaffButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStaffButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlStaffButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rbDeleteS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbEditS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbAddS, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlStaffButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHomeS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSubmitS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStaffListS, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlStaffButtonsLayout.setVerticalGroup(
+            pnlStaffButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStaffButtonsLayout.createSequentialGroup()
+                .addGroup(pnlStaffButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStaffButtonsLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(rbAddS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbEditS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbDeleteS))
+                    .addGroup(pnlStaffButtonsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSubmitS, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnStaffListS, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHomeS, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("Staff Accounts");
+
         javax.swing.GroupLayout pnlStaffLayout = new javax.swing.GroupLayout(pnlStaff);
         pnlStaff.setLayout(pnlStaffLayout);
         pnlStaffLayout.setHorizontalGroup(
             pnlStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 648, Short.MAX_VALUE)
+            .addGroup(pnlStaffLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(pnlStaffDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnlStaffButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(210, 210, 210))
         );
         pnlStaffLayout.setVerticalGroup(
             pnlStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 444, Short.MAX_VALUE)
+            .addGroup(pnlStaffLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(pnlStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
+                        .addComponent(pnlStaffDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
+                        .addComponent(pnlStaffButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107))))
         );
 
         getContentPane().add(pnlStaff, "pnlStaff");
@@ -162,15 +382,41 @@ public class SupportForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bgAEDStaff;
     private javax.swing.JButton btnCustomerH;
     private javax.swing.JButton btnExitH;
+    private javax.swing.JButton btnHomeS;
     private javax.swing.JButton btnLogoutH;
     private javax.swing.JButton btnProductH;
     private javax.swing.JButton btnStaffH;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnStaffListS;
+    private javax.swing.JButton btnSubmitS;
+    private javax.swing.JComboBox<String> cbStaffListS;
+    private com.toedter.calendar.JDateChooser dcDateOfBirthS;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblAddressS;
+    private javax.swing.JLabel lblDateOfBirthS;
+    private javax.swing.JLabel lblEmailS;
+    private javax.swing.JLabel lblForenameS;
+    private javax.swing.JLabel lblPasswordCheckS;
+    private javax.swing.JLabel lblPostcodeS;
+    private javax.swing.JLabel lblStaffIDS;
+    private javax.swing.JLabel lblSurnameS;
     private javax.swing.JLabel lblTitleH;
     private javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlHomeButtons;
     private javax.swing.JPanel pnlStaff;
+    private javax.swing.JPanel pnlStaffButtons;
+    private javax.swing.JPanel pnlStaffDetails;
+    private javax.swing.JRadioButton rbAddS;
+    private javax.swing.JRadioButton rbDeleteS;
+    private javax.swing.JRadioButton rbEditS;
+    private javax.swing.JScrollPane sptxtaAddressS;
+    private javax.swing.JTextField txtEmailS;
+    private javax.swing.JTextField txtForenameS;
+    private javax.swing.JTextField txtPostcodeS;
+    private javax.swing.JTextField txtStaffIDS;
+    private javax.swing.JTextField txtSurnameS;
+    private javax.swing.JTextArea txtaAddressS;
     // End of variables declaration//GEN-END:variables
 }
