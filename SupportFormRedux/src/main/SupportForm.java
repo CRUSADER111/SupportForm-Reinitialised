@@ -1,5 +1,8 @@
 package main;
 
+import java.io.IOException;
+import sun.tools.jar.CommandLine;
+
 /**
  *
  * @author AMORRISO
@@ -10,7 +13,22 @@ public class SupportForm extends javax.swing.JFrame {
      * Creates new form Main
      */
     public SupportForm() {
+        updatedb();
         initComponents();
+    }
+    
+    /**
+     * Function to update database
+     */
+    public void updatedb() {
+        try {
+            //CommandLine cmdLine = CommandLine.parse(line);
+            Runtime rt = Runtime.getRuntime();
+            rt.exec(new String[]{"cmd", "/k", "start", "cmd", "/k", "cd", "c:", ""});
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
     }
 
     /**
@@ -82,13 +100,12 @@ public class SupportForm extends javax.swing.JFrame {
             pnlHomeButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomeButtonsLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(pnlHomeButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnStaffH, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlHomeButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnCustomerH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnProductH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLogoutH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExitH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(pnlHomeButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCustomerH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProductH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogoutH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExitH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStaffH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         pnlHomeButtonsLayout.setVerticalGroup(

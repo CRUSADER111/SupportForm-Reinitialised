@@ -81,14 +81,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnStaffH" min="-2" pref="119" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnCustomerH" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnProductH" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnLogoutH" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnExitH" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnCustomerH" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnProductH" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnLogoutH" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnExitH" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnStaffH" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
