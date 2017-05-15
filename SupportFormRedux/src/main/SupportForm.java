@@ -22,9 +22,11 @@ public class SupportForm extends javax.swing.JFrame {
      */
     public void updatedb() {
         try {
-            //CommandLine cmdLine = CommandLine.parse(line);
+//            CommandLine cmdLine = CommandLine.parse(line);
             Runtime rt = Runtime.getRuntime();
-            rt.exec(new String[]{"cmd", "/k", "start", "cmd", "/k", "cd", "c:", ""});
+            rt.exec(new String[]{"cmd", "/k", "start", "c:\\xampp\\mysql\\bin\\mysql.exe"});
+            rt.exec(new String[]{"cmd", "/k", "\\h"});
+              
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,6 +43,7 @@ public class SupportForm extends javax.swing.JFrame {
     private void initComponents() {
 
         bgAEDStaff = new javax.swing.ButtonGroup();
+        bgAEDCR = new javax.swing.ButtonGroup();
         pnlHome = new javax.swing.JPanel();
         lblTitleH = new javax.swing.JLabel();
         pnlHomeButtons = new javax.swing.JPanel();
@@ -50,6 +53,7 @@ public class SupportForm extends javax.swing.JFrame {
         btnLogoutH = new javax.swing.JButton();
         btnExitH = new javax.swing.JButton();
         pnlStaff = new javax.swing.JPanel();
+        lblTitleS = new javax.swing.JLabel();
         pnlStaffDetails = new javax.swing.JPanel();
         cbStaffListS = new javax.swing.JComboBox<>();
         lblStaffIDS = new javax.swing.JLabel();
@@ -75,9 +79,40 @@ public class SupportForm extends javax.swing.JFrame {
         btnSubmitS = new javax.swing.JButton();
         btnStaffListS = new javax.swing.JButton();
         btnHomeS = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        pnlCustomerReport = new javax.swing.JPanel();
+        lblTitleCR = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        pnlCustomerReportDetails = new javax.swing.JPanel();
+        cbReportListCR = new javax.swing.JComboBox<>();
+        lblReportIDCR = new javax.swing.JLabel();
+        txtReportIDCR = new javax.swing.JTextField();
+        lblForenameCR = new javax.swing.JLabel();
+        txtForenameCR = new javax.swing.JTextField();
+        lblSurnameCR = new javax.swing.JLabel();
+        txtSurnameCR = new javax.swing.JTextField();
+        lblAddressCR = new javax.swing.JLabel();
+        sptxtaAddressS1 = new javax.swing.JScrollPane();
+        txtaAddressCR = new javax.swing.JTextArea();
+        lblPostcodeCR = new javax.swing.JLabel();
+        txtPostcodeCR = new javax.swing.JTextField();
+        lblEmailCR = new javax.swing.JLabel();
+        txtEmailCR = new javax.swing.JTextField();
+        lblTelephoneCR = new javax.swing.JLabel();
+        txtTelephone = new javax.swing.JTextField();
+        dcReportDateCR = new com.toedter.calendar.JDateChooser();
+        lblReportDateCR = new javax.swing.JLabel();
+        cbEquipmentTypeCR = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        pnlCustomerReportButtons = new javax.swing.JPanel();
+        rbAddCR = new javax.swing.JRadioButton();
+        rbEditCR = new javax.swing.JRadioButton();
+        rbDeleteCR = new javax.swing.JRadioButton();
+        btnSubmitCR = new javax.swing.JButton();
+        btnStaffListCR = new javax.swing.JButton();
+        btnHomeCR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fast Computer Fix");
         getContentPane().setLayout(new java.awt.CardLayout());
 
         lblTitleH.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -142,13 +177,16 @@ public class SupportForm extends javax.swing.JFrame {
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomeLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(lblTitleH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitleH, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlHomeButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
         getContentPane().add(pnlHome, "pnlHome");
+
+        lblTitleS.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblTitleS.setText("Staff Accounts");
 
         cbStaffListS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an Existing Staff ID..." }));
         cbStaffListS.setToolTipText("If you need to edit your details select your ID from the drop-down list.");
@@ -268,7 +306,6 @@ public class SupportForm extends javax.swing.JFrame {
         );
 
         bgAEDStaff.add(rbAddS);
-        rbAddS.setSelected(true);
         rbAddS.setText("Add");
 
         bgAEDStaff.add(rbEditS);
@@ -324,42 +361,265 @@ public class SupportForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Staff Accounts");
-
         javax.swing.GroupLayout pnlStaffLayout = new javax.swing.GroupLayout(pnlStaff);
         pnlStaff.setLayout(pnlStaffLayout);
         pnlStaffLayout.setHorizontalGroup(
             pnlStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
+                .addContainerGap(210, Short.MAX_VALUE)
+                .addComponent(lblTitleS)
+                .addGap(210, 210, 210))
             .addGroup(pnlStaffLayout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addComponent(pnlStaffDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlStaffButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(210, 210, 210))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlStaffLayout.setVerticalGroup(
             pnlStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStaffLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(lblTitleS)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
-                        .addComponent(pnlStaffDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                    .addComponent(pnlStaffDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStaffLayout.createSequentialGroup()
                         .addComponent(pnlStaffButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(107, 107, 107))))
+                        .addGap(96, 96, 96)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlStaff, "pnlStaff");
 
+        lblTitleCR.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblTitleCR.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitleCR.setText("Customer Reports");
+
+        cbReportListCR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an Existing Report ID..." }));
+        cbReportListCR.setToolTipText("If you need to edit your details select your ID from the drop-down list.");
+
+        lblReportIDCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblReportIDCR.setText("Report ID:");
+
+        txtReportIDCR.setEditable(false);
+
+        lblForenameCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblForenameCR.setText("Forename:");
+
+        lblSurnameCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblSurnameCR.setText("Surname:");
+
+        lblAddressCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblAddressCR.setText("Address:");
+
+        txtaAddressCR.setColumns(20);
+        txtaAddressCR.setRows(5);
+        sptxtaAddressS1.setViewportView(txtaAddressCR);
+
+        lblPostcodeCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblPostcodeCR.setText("Postcode:");
+
+        lblEmailCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblEmailCR.setText("Email:");
+
+        lblTelephoneCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblTelephoneCR.setText("Telephone:");
+
+        lblReportDateCR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblReportDateCR.setText("Report Date:");
+
+        cbEquipmentTypeCR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose an Equipment Type...", "Computer", "Printer", "Router", "Switch", "Monitor" }));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel2.setText("Equipment Type:");
+
+        javax.swing.GroupLayout pnlCustomerReportDetailsLayout = new javax.swing.GroupLayout(pnlCustomerReportDetails);
+        pnlCustomerReportDetails.setLayout(pnlCustomerReportDetailsLayout);
+        pnlCustomerReportDetailsLayout.setHorizontalGroup(
+            pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCustomerReportDetailsLayout.createSequentialGroup()
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                        .addGap(0, 10, Short.MAX_VALUE)
+                        .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblReportDateCR, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbEquipmentTypeCR, 0, 170, Short.MAX_VALUE)
+                            .addComponent(dcReportDateCR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblSurnameCR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSurnameCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblAddressCR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sptxtaAddressS1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblForenameCR, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblReportIDCR, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtReportIDCR, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                    .addComponent(txtForenameCR)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblTelephoneCR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblPostcodeCR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPostcodeCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblEmailCR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtEmailCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbReportListCR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        pnlCustomerReportDetailsLayout.setVerticalGroup(
+            pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCustomerReportDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbReportListCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblReportIDCR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtReportIDCR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblForenameCR)
+                    .addComponent(txtForenameCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSurnameCR)
+                    .addComponent(txtSurnameCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sptxtaAddressS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAddressCR))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPostcodeCR)
+                    .addComponent(txtPostcodeCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmailCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEmailCR))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTelephoneCR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblReportDateCR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcReportDateCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbEquipmentTypeCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        jScrollPane2.setViewportView(pnlCustomerReportDetails);
+
+        bgAEDCR.add(rbAddCR);
+        rbAddCR.setSelected(true);
+        rbAddCR.setText("Add");
+
+        bgAEDCR.add(rbEditCR);
+        rbEditCR.setText("Edit");
+
+        bgAEDCR.add(rbDeleteCR);
+        rbDeleteCR.setText("Delete");
+
+        btnSubmitCR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSubmitCR.setText("Submit");
+
+        btnStaffListCR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnStaffListCR.setText("Report List");
+
+        btnHomeCR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnHomeCR.setText("Home");
+
+        javax.swing.GroupLayout pnlCustomerReportButtonsLayout = new javax.swing.GroupLayout(pnlCustomerReportButtons);
+        pnlCustomerReportButtons.setLayout(pnlCustomerReportButtonsLayout);
+        pnlCustomerReportButtonsLayout.setHorizontalGroup(
+            pnlCustomerReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCustomerReportButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlCustomerReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rbDeleteCR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbEditCR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbAddCR, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCustomerReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHomeCR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSubmitCR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStaffListCR, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlCustomerReportButtonsLayout.setVerticalGroup(
+            pnlCustomerReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCustomerReportButtonsLayout.createSequentialGroup()
+                .addGroup(pnlCustomerReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCustomerReportButtonsLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(rbAddCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbEditCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbDeleteCR))
+                    .addGroup(pnlCustomerReportButtonsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSubmitCR, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnStaffListCR, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHomeCR, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlCustomerReportLayout = new javax.swing.GroupLayout(pnlCustomerReport);
+        pnlCustomerReport.setLayout(pnlCustomerReportLayout);
+        pnlCustomerReportLayout.setHorizontalGroup(
+            pnlCustomerReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitleCR, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
+            .addGroup(pnlCustomerReportLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlCustomerReportButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        pnlCustomerReportLayout.setVerticalGroup(
+            pnlCustomerReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCustomerReportLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitleCR)
+                .addGroup(pnlCustomerReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCustomerReportLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(pnlCustomerReportButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCustomerReportLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(pnlCustomerReport, "pnlCustomerReport");
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -399,41 +659,73 @@ public class SupportForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bgAEDCR;
     private javax.swing.ButtonGroup bgAEDStaff;
     private javax.swing.JButton btnCustomerH;
     private javax.swing.JButton btnExitH;
+    private javax.swing.JButton btnHomeCR;
     private javax.swing.JButton btnHomeS;
     private javax.swing.JButton btnLogoutH;
     private javax.swing.JButton btnProductH;
     private javax.swing.JButton btnStaffH;
+    private javax.swing.JButton btnStaffListCR;
     private javax.swing.JButton btnStaffListS;
+    private javax.swing.JButton btnSubmitCR;
     private javax.swing.JButton btnSubmitS;
+    private javax.swing.JComboBox<String> cbEquipmentTypeCR;
+    private javax.swing.JComboBox<String> cbReportListCR;
     private javax.swing.JComboBox<String> cbStaffListS;
     private com.toedter.calendar.JDateChooser dcDateOfBirthS;
-    private javax.swing.JLabel jLabel1;
+    private com.toedter.calendar.JDateChooser dcReportDateCR;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblAddressCR;
     private javax.swing.JLabel lblAddressS;
     private javax.swing.JLabel lblDateOfBirthS;
+    private javax.swing.JLabel lblEmailCR;
     private javax.swing.JLabel lblEmailS;
+    private javax.swing.JLabel lblForenameCR;
     private javax.swing.JLabel lblForenameS;
     private javax.swing.JLabel lblPasswordCheckS;
+    private javax.swing.JLabel lblPostcodeCR;
     private javax.swing.JLabel lblPostcodeS;
+    private javax.swing.JLabel lblReportDateCR;
+    private javax.swing.JLabel lblReportIDCR;
     private javax.swing.JLabel lblStaffIDS;
+    private javax.swing.JLabel lblSurnameCR;
     private javax.swing.JLabel lblSurnameS;
+    private javax.swing.JLabel lblTelephoneCR;
+    private javax.swing.JLabel lblTitleCR;
     private javax.swing.JLabel lblTitleH;
+    private javax.swing.JLabel lblTitleS;
+    private javax.swing.JPanel pnlCustomerReport;
+    private javax.swing.JPanel pnlCustomerReportButtons;
+    private javax.swing.JPanel pnlCustomerReportDetails;
     private javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlHomeButtons;
     private javax.swing.JPanel pnlStaff;
     private javax.swing.JPanel pnlStaffButtons;
     private javax.swing.JPanel pnlStaffDetails;
+    private javax.swing.JRadioButton rbAddCR;
     private javax.swing.JRadioButton rbAddS;
+    private javax.swing.JRadioButton rbDeleteCR;
     private javax.swing.JRadioButton rbDeleteS;
+    private javax.swing.JRadioButton rbEditCR;
     private javax.swing.JRadioButton rbEditS;
     private javax.swing.JScrollPane sptxtaAddressS;
+    private javax.swing.JScrollPane sptxtaAddressS1;
+    private javax.swing.JTextField txtEmailCR;
     private javax.swing.JTextField txtEmailS;
+    private javax.swing.JTextField txtForenameCR;
     private javax.swing.JTextField txtForenameS;
+    private javax.swing.JTextField txtPostcodeCR;
     private javax.swing.JTextField txtPostcodeS;
+    private javax.swing.JTextField txtReportIDCR;
     private javax.swing.JTextField txtStaffIDS;
+    private javax.swing.JTextField txtSurnameCR;
     private javax.swing.JTextField txtSurnameS;
+    private javax.swing.JTextField txtTelephone;
+    private javax.swing.JTextArea txtaAddressCR;
     private javax.swing.JTextArea txtaAddressS;
     // End of variables declaration//GEN-END:variables
 }
