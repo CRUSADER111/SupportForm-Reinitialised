@@ -510,16 +510,16 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="146" max="32767" attributes="0"/>
                   <Component id="lblTitleCR" min="-2" pref="356" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="294" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="spCustomerReportDetails" min="-2" pref="345" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="pnlCustomerReportButtons" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="85" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -530,12 +530,12 @@
                   <Component id="lblTitleCR" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="pnlCustomerReportButtons" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="spCustomerReportDetails" min="-2" pref="366" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="366" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="pnlCustomerReportButtons" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -553,7 +553,7 @@
             <Property name="text" type="java.lang.String" value="Customer Reports"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+        <Container class="javax.swing.JScrollPane" name="spCustomerReportDetails">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
@@ -562,22 +562,11 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblReportDateCR" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="cbEquipmentTypeCR" pref="170" max="32767" attributes="0"/>
-                                      <Component id="dcReportDateCR" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="76" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="lblSurnameCR" min="-2" max="-2" attributes="0"/>
@@ -596,8 +585,8 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txtReportIDCR" alignment="0" pref="170" max="32767" attributes="0"/>
-                                              <Component id="txtForenameCR" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtReportIDCR" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtForenameCR" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -618,8 +607,38 @@
                                       <Component id="cbReportListCR" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblReportDateCR" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblEquipmentTypeCR" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="cbEquipmentTypeCR" max="32767" attributes="0"/>
+                                      <Component id="dcReportDateCR" min="-2" pref="170" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="lblNatureOfProblemCR" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblSeverityCR" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblStaffAcceptingCR" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblStaffFixingCR" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDateResolvedCR" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblRepairCostCR" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtRepairCostCR" max="32767" attributes="0"/>
+                                      <Component id="dcDateResolvedCR" max="32767" attributes="0"/>
+                                      <Component id="cbStaffFixingCR" max="32767" attributes="0"/>
+                                      <Component id="cbStaffAcceptingCR" max="32767" attributes="0"/>
+                                      <Component id="spNatureOfProblemCR" max="32767" attributes="0"/>
+                                      <Component id="cbSeverityCR" min="-2" pref="170" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -671,9 +690,39 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="cbEquipmentTypeCR" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEquipmentTypeCR" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="38" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="spNatureOfProblemCR" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNatureOfProblemCR" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cbSeverityCR" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSeverityCR" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cbStaffAcceptingCR" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblStaffAcceptingCR" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cbStaffFixingCR" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblStaffFixingCR" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lblDateResolvedCR" max="32767" attributes="0"/>
+                              <Component id="dcDateResolvedCR" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtRepairCostCR" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRepairCostCR" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -764,12 +813,18 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtTelephone">
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="dcReportDateCR">
-                </Component>
                 <Component class="javax.swing.JLabel" name="lblReportDateCR">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="text" type="java.lang.String" value="Report Date:"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="dcReportDateCR">
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblEquipmentTypeCR">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Equipment Type:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cbEquipmentTypeCR">
@@ -789,11 +844,99 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="lblNatureOfProblemCR">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="11"/>
-                    <Property name="text" type="java.lang.String" value="Equipment Type:"/>
+                    <Property name="text" type="java.lang.String" value="Nature Of Problem:"/>
                   </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="spNatureOfProblemCR">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="txtaNatureOfProblemCR">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="lblSeverityCR">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Severity:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cbSeverityCR">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Choose a Severity Level..."/>
+                        <StringItem index="1" value="1 (High)"/>
+                        <StringItem index="2" value="2 (Medium)"/>
+                        <StringItem index="3" value="3 (Low)"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblStaffAcceptingCR">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Staff Receiving Equipment:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cbStaffAcceptingCR">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="1">
+                        <StringItem index="0" value="Choose a Staff Member..."/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblStaffFixingCR">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Staff Assigned to Fix:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cbStaffFixingCR">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="1">
+                        <StringItem index="0" value="Choose a Staff Member..."/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblDateResolvedCR">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Date Resolved:"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="dcDateResolvedCR">
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblRepairCostCR">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Estimated Cost of Repair:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtRepairCostCR">
                 </Component>
               </SubComponents>
             </Container>
