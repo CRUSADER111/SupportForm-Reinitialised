@@ -13,24 +13,7 @@ public class SupportForm extends javax.swing.JFrame {
      * Creates new form Main
      */
     public SupportForm() {
-        updatedb();
         initComponents();
-    }
-    
-    /**
-     * Function to update database
-     */
-    public void updatedb() {
-        try {
-//            CommandLine cmdLine = CommandLine.parse(line);
-            Runtime rt = Runtime.getRuntime();
-            rt.exec(new String[]{"cmd", "/k", "start", "c:\\xampp\\mysql\\bin\\mysql.exe"});
-            rt.exec(new String[]{"cmd", "/k", "\\h"});
-              
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
     }
 
     /**
@@ -44,6 +27,14 @@ public class SupportForm extends javax.swing.JFrame {
 
         bgAEDStaff = new javax.swing.ButtonGroup();
         bgAEDCR = new javax.swing.ButtonGroup();
+        pnlLogin = new javax.swing.JPanel();
+        lblLogin = new javax.swing.JLabel();
+        pnlLoginDetails = new javax.swing.JPanel();
+        lblUsername = new javax.swing.JLabel();
+        txtStaffID = new javax.swing.JTextField();
+        pfPassword = new javax.swing.JPasswordField();
+        lblPassword = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
         pnlHome = new javax.swing.JPanel();
         lblTitleH = new javax.swing.JLabel();
         pnlHomeButtons = new javax.swing.JPanel();
@@ -123,10 +114,117 @@ public class SupportForm extends javax.swing.JFrame {
         btnSubmitCR = new javax.swing.JButton();
         btnStaffListCR = new javax.swing.JButton();
         btnHomeCR = new javax.swing.JButton();
+        pnlProductReport = new javax.swing.JPanel();
+        lblTitlePD = new javax.swing.JLabel();
+        spProductReportDetails = new javax.swing.JScrollPane();
+        pnlProductReportDetails = new javax.swing.JPanel();
+        cbProductListPR = new javax.swing.JComboBox<>();
+        lblProductIDPR = new javax.swing.JLabel();
+        txtProductIDPR = new javax.swing.JTextField();
+        lblCustomerIDPR = new javax.swing.JLabel();
+        cbCustomerIDPR = new javax.swing.JComboBox<>();
+        lblStaffAcceptingPR = new javax.swing.JLabel();
+        cbStaffAcceptingPR = new javax.swing.JComboBox<>();
+        lblProductNamePR = new javax.swing.JLabel();
+        txtProductNamePR = new javax.swing.JTextField();
+        lblManufacturerPR = new javax.swing.JLabel();
+        txtManufacturerPR = new javax.swing.JTextField();
+        lblModelNamePR = new javax.swing.JLabel();
+        txtModelNamePR = new javax.swing.JTextField();
+        lblSerialNumberPR = new javax.swing.JLabel();
+        txtSerialNumberPR = new javax.swing.JTextField();
+        lblReportDatePR = new javax.swing.JLabel();
+        dcReportDatePR = new com.toedter.calendar.JDateChooser();
+        lblNatureOfProblemPR = new javax.swing.JLabel();
+        spNatureOfProblemPR = new javax.swing.JScrollPane();
+        txtaNatureOfProblemPR = new javax.swing.JTextArea();
+        lblDateResolvedPR = new javax.swing.JLabel();
+        dcDateResolvedPR = new com.toedter.calendar.JDateChooser();
+        lblWorkReportPR = new javax.swing.JLabel();
+        spWorkReportPR = new javax.swing.JScrollPane();
+        txtaWorkReportPR = new javax.swing.JTextArea();
+        pnlProductReportButtons = new javax.swing.JPanel();
+        rbAddPR = new javax.swing.JRadioButton();
+        rbEditPR = new javax.swing.JRadioButton();
+        rbDeletePR = new javax.swing.JRadioButton();
+        btnSubmitPR = new javax.swing.JButton();
+        btnStaffListPR = new javax.swing.JButton();
+        btnHomePR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fast Computer Fix");
+        setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
+
+        lblLogin.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblLogin.setText("Login");
+
+        lblUsername.setText("Username:");
+
+        lblPassword.setText("Password:");
+
+        btnSubmit.setText("Submit");
+
+        javax.swing.GroupLayout pnlLoginDetailsLayout = new javax.swing.GroupLayout(pnlLoginDetails);
+        pnlLoginDetails.setLayout(pnlLoginDetailsLayout);
+        pnlLoginDetailsLayout.setHorizontalGroup(
+            pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLoginDetailsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlLoginDetailsLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblPassword))
+                    .addComponent(lblUsername))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSubmit)
+                    .addGroup(pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtStaffID)
+                        .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        pnlLoginDetailsLayout.setVerticalGroup(
+            pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlLoginDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsername)
+                    .addComponent(txtStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(pnlLoginDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPassword))
+                .addGap(34, 34, 34)
+                .addComponent(btnSubmit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlLoginLayout = new javax.swing.GroupLayout(pnlLogin);
+        pnlLogin.setLayout(pnlLoginLayout);
+        pnlLoginLayout.setHorizontalGroup(
+            pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlLoginLayout.createSequentialGroup()
+                .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlLoginLayout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(pnlLoginDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlLoginLayout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(lblLogin)))
+                .addContainerGap(223, Short.MAX_VALUE))
+        );
+        pnlLoginLayout.setVerticalGroup(
+            pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLoginLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(lblLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(pnlLoginDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(157, 157, 157))
+        );
+
+        getContentPane().add(pnlLogin, "card7");
 
         lblTitleH.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblTitleH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -483,37 +581,34 @@ public class SupportForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSurnameCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSurnameCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                        .addComponent(lblAddressCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sptxtaAddressS1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
                         .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                                .addComponent(lblSurnameCR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSurnameCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                                .addComponent(lblAddressCR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sptxtaAddressS1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblForenameCR, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblReportIDCR, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtReportIDCR)
-                                    .addComponent(txtForenameCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                                .addComponent(lblTelephoneCR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                                .addComponent(lblPostcodeCR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPostcodeCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
-                                .addComponent(lblEmailCR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtEmailCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cbReportListCR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblForenameCR, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblReportIDCR, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtReportIDCR)
+                            .addComponent(txtForenameCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                        .addComponent(lblTelephoneCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                        .addComponent(lblPostcodeCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPostcodeCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
+                        .addComponent(lblEmailCR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmailCR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbReportListCR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerReportDetailsLayout.createSequentialGroup()
                         .addGroup(pnlCustomerReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblReportDateCR, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -611,7 +706,6 @@ public class SupportForm extends javax.swing.JFrame {
         spCustomerReportDetails.setViewportView(pnlCustomerReportDetails);
 
         bgAEDCR.add(rbAddCR);
-        rbAddCR.setSelected(true);
         rbAddCR.setText("Add");
 
         bgAEDCR.add(rbEditCR);
@@ -689,15 +783,274 @@ public class SupportForm extends javax.swing.JFrame {
                 .addComponent(lblTitleCR)
                 .addGroup(pnlCustomerReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCustomerReportLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(spCustomerReportDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlCustomerReportLayout.createSequentialGroup()
                         .addGap(98, 98, 98)
-                        .addComponent(pnlCustomerReportButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(pnlCustomerReportButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCustomerReportLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(spCustomerReportDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlCustomerReport, "pnlCustomerReport");
+
+        lblTitlePD.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblTitlePD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitlePD.setText("Product Details");
+
+        cbProductListPR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an Existing Product ID.." }));
+        cbProductListPR.setToolTipText("If you need to edit your details select your ID from the drop-down list.");
+
+        lblProductIDPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblProductIDPR.setText("Product ID:");
+
+        txtProductIDPR.setEditable(false);
+
+        lblCustomerIDPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCustomerIDPR.setText("Customer ID:");
+
+        cbCustomerIDPR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose a Customer ID..." }));
+
+        lblStaffAcceptingPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblStaffAcceptingPR.setText("Staff Receiving Equipment:");
+
+        cbStaffAcceptingPR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose a Staff Member..." }));
+
+        lblProductNamePR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblProductNamePR.setText("Product Name:");
+
+        lblManufacturerPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblManufacturerPR.setText("Manufacturer:");
+
+        lblModelNamePR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblModelNamePR.setText("Model Name/Number:");
+
+        lblSerialNumberPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblSerialNumberPR.setText("Serial Number:");
+
+        lblReportDatePR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblReportDatePR.setText("Report Date:");
+
+        lblNatureOfProblemPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblNatureOfProblemPR.setText("Nature Of Problem:");
+
+        txtaNatureOfProblemPR.setColumns(20);
+        txtaNatureOfProblemPR.setRows(5);
+        spNatureOfProblemPR.setViewportView(txtaNatureOfProblemPR);
+
+        lblDateResolvedPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblDateResolvedPR.setText("Date Resolved:");
+
+        lblWorkReportPR.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblWorkReportPR.setText("Work Report:");
+
+        txtaWorkReportPR.setColumns(20);
+        txtaWorkReportPR.setRows(5);
+        spWorkReportPR.setViewportView(txtaWorkReportPR);
+
+        javax.swing.GroupLayout pnlProductReportDetailsLayout = new javax.swing.GroupLayout(pnlProductReportDetails);
+        pnlProductReportDetails.setLayout(pnlProductReportDetailsLayout);
+        pnlProductReportDetailsLayout.setHorizontalGroup(
+            pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProductReportDetailsLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(cbProductListPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlProductReportDetailsLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(lblProductIDPR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtProductIDPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                            .addComponent(lblReportDatePR)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(dcReportDatePR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                            .addComponent(lblStaffAcceptingPR)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cbStaffAcceptingPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                            .addComponent(lblCustomerIDPR)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cbCustomerIDPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblModelNamePR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtModelNamePR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblManufacturerPR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtManufacturerPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblSerialNumberPR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSerialNumberPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblProductNamePR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtProductNamePR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNatureOfProblemPR)
+                                    .addComponent(lblDateResolvedPR))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(dcDateResolvedPR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(spNatureOfProblemPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportDetailsLayout.createSequentialGroup()
+                                .addComponent(lblWorkReportPR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(spWorkReportPR, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
+        );
+        pnlProductReportDetailsLayout.setVerticalGroup(
+            pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProductReportDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbProductListPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtProductIDPR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProductIDPR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbCustomerIDPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCustomerIDPR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbStaffAcceptingPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblStaffAcceptingPR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProductNamePR)
+                    .addComponent(txtProductNamePR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtManufacturerPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblManufacturerPR))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblModelNamePR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModelNamePR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSerialNumberPR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSerialNumberPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblReportDatePR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcReportDatePR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spNatureOfProblemPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNatureOfProblemPR, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblDateResolvedPR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dcDateResolvedPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlProductReportDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spWorkReportPR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblWorkReportPR))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        spProductReportDetails.setViewportView(pnlProductReportDetails);
+
+        bgAEDCR.add(rbAddPR);
+        rbAddPR.setSelected(true);
+        rbAddPR.setText("Add");
+
+        bgAEDCR.add(rbEditPR);
+        rbEditPR.setText("Edit");
+
+        bgAEDCR.add(rbDeletePR);
+        rbDeletePR.setText("Delete");
+
+        btnSubmitPR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSubmitPR.setText("Submit");
+
+        btnStaffListPR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnStaffListPR.setText("Report List");
+
+        btnHomePR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnHomePR.setText("Home");
+
+        javax.swing.GroupLayout pnlProductReportButtonsLayout = new javax.swing.GroupLayout(pnlProductReportButtons);
+        pnlProductReportButtons.setLayout(pnlProductReportButtonsLayout);
+        pnlProductReportButtonsLayout.setHorizontalGroup(
+            pnlProductReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProductReportButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlProductReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rbDeletePR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbEditPR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbAddPR, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlProductReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHomePR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSubmitPR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStaffListPR, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlProductReportButtonsLayout.setVerticalGroup(
+            pnlProductReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProductReportButtonsLayout.createSequentialGroup()
+                .addGroup(pnlProductReportButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlProductReportButtonsLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(rbAddPR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbEditPR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbDeletePR))
+                    .addGroup(pnlProductReportButtonsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSubmitPR, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnStaffListPR, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHomePR, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlProductReportLayout = new javax.swing.GroupLayout(pnlProductReport);
+        pnlProductReport.setLayout(pnlProductReportLayout);
+        pnlProductReportLayout.setHorizontalGroup(
+            pnlProductReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductReportLayout.createSequentialGroup()
+                .addContainerGap(146, Short.MAX_VALUE)
+                .addComponent(lblTitlePD, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
+            .addGroup(pnlProductReportLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(spProductReportDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlProductReportButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlProductReportLayout.setVerticalGroup(
+            pnlProductReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProductReportLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitlePD)
+                .addGroup(pnlProductReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlProductReportLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(spProductReportDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlProductReportLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(pnlProductReportButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(pnlProductReport, "pnlProductReport");
 
         pack();
         setLocationRelativeTo(null);
@@ -745,41 +1098,62 @@ public class SupportForm extends javax.swing.JFrame {
     private javax.swing.JButton btnCustomerH;
     private javax.swing.JButton btnExitH;
     private javax.swing.JButton btnHomeCR;
+    private javax.swing.JButton btnHomePR;
     private javax.swing.JButton btnHomeS;
     private javax.swing.JButton btnLogoutH;
     private javax.swing.JButton btnProductH;
     private javax.swing.JButton btnStaffH;
     private javax.swing.JButton btnStaffListCR;
+    private javax.swing.JButton btnStaffListPR;
     private javax.swing.JButton btnStaffListS;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnSubmitCR;
+    private javax.swing.JButton btnSubmitPR;
     private javax.swing.JButton btnSubmitS;
+    private javax.swing.JComboBox<String> cbCustomerIDPR;
     private javax.swing.JComboBox<String> cbEquipmentTypeCR;
+    private javax.swing.JComboBox<String> cbProductListPR;
     private javax.swing.JComboBox<String> cbReportListCR;
     private javax.swing.JComboBox<String> cbSeverityCR;
     private javax.swing.JComboBox<String> cbStaffAcceptingCR;
+    private javax.swing.JComboBox<String> cbStaffAcceptingPR;
     private javax.swing.JComboBox<String> cbStaffFixingCR;
     private javax.swing.JComboBox<String> cbStaffListS;
     private com.toedter.calendar.JDateChooser dcDateOfBirthS;
     private com.toedter.calendar.JDateChooser dcDateResolvedCR;
+    private com.toedter.calendar.JDateChooser dcDateResolvedPR;
     private com.toedter.calendar.JDateChooser dcReportDateCR;
+    private com.toedter.calendar.JDateChooser dcReportDatePR;
     private javax.swing.JLabel lblAddressCR;
     private javax.swing.JLabel lblAddressS;
+    private javax.swing.JLabel lblCustomerIDPR;
     private javax.swing.JLabel lblDateOfBirthS;
     private javax.swing.JLabel lblDateResolvedCR;
+    private javax.swing.JLabel lblDateResolvedPR;
     private javax.swing.JLabel lblEmailCR;
     private javax.swing.JLabel lblEmailS;
     private javax.swing.JLabel lblEquipmentTypeCR;
     private javax.swing.JLabel lblForenameCR;
     private javax.swing.JLabel lblForenameS;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblManufacturerPR;
+    private javax.swing.JLabel lblModelNamePR;
     private javax.swing.JLabel lblNatureOfProblemCR;
+    private javax.swing.JLabel lblNatureOfProblemPR;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPasswordCheckS;
     private javax.swing.JLabel lblPostcodeCR;
     private javax.swing.JLabel lblPostcodeS;
+    private javax.swing.JLabel lblProductIDPR;
+    private javax.swing.JLabel lblProductNamePR;
     private javax.swing.JLabel lblRepairCostCR;
     private javax.swing.JLabel lblReportDateCR;
+    private javax.swing.JLabel lblReportDatePR;
     private javax.swing.JLabel lblReportIDCR;
+    private javax.swing.JLabel lblSerialNumberPR;
     private javax.swing.JLabel lblSeverityCR;
     private javax.swing.JLabel lblStaffAcceptingCR;
+    private javax.swing.JLabel lblStaffAcceptingPR;
     private javax.swing.JLabel lblStaffFixingCR;
     private javax.swing.JLabel lblStaffIDS;
     private javax.swing.JLabel lblSurnameCR;
@@ -787,33 +1161,54 @@ public class SupportForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelephoneCR;
     private javax.swing.JLabel lblTitleCR;
     private javax.swing.JLabel lblTitleH;
+    private javax.swing.JLabel lblTitlePD;
     private javax.swing.JLabel lblTitleS;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JLabel lblWorkReportPR;
+    private javax.swing.JPasswordField pfPassword;
     private javax.swing.JPanel pnlCustomerReport;
     private javax.swing.JPanel pnlCustomerReportButtons;
     private javax.swing.JPanel pnlCustomerReportDetails;
     private javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlHomeButtons;
+    private javax.swing.JPanel pnlLogin;
+    private javax.swing.JPanel pnlLoginDetails;
+    private javax.swing.JPanel pnlProductReport;
+    private javax.swing.JPanel pnlProductReportButtons;
+    private javax.swing.JPanel pnlProductReportDetails;
     private javax.swing.JPanel pnlStaff;
     private javax.swing.JPanel pnlStaffButtons;
     private javax.swing.JPanel pnlStaffDetails;
     private javax.swing.JRadioButton rbAddCR;
+    private javax.swing.JRadioButton rbAddPR;
     private javax.swing.JRadioButton rbAddS;
     private javax.swing.JRadioButton rbDeleteCR;
+    private javax.swing.JRadioButton rbDeletePR;
     private javax.swing.JRadioButton rbDeleteS;
     private javax.swing.JRadioButton rbEditCR;
+    private javax.swing.JRadioButton rbEditPR;
     private javax.swing.JRadioButton rbEditS;
     private javax.swing.JScrollPane spCustomerReportDetails;
     private javax.swing.JScrollPane spNatureOfProblemCR;
+    private javax.swing.JScrollPane spNatureOfProblemPR;
+    private javax.swing.JScrollPane spProductReportDetails;
+    private javax.swing.JScrollPane spWorkReportPR;
     private javax.swing.JScrollPane sptxtaAddressS;
     private javax.swing.JScrollPane sptxtaAddressS1;
     private javax.swing.JTextField txtEmailCR;
     private javax.swing.JTextField txtEmailS;
     private javax.swing.JTextField txtForenameCR;
     private javax.swing.JTextField txtForenameS;
+    private javax.swing.JTextField txtManufacturerPR;
+    private javax.swing.JTextField txtModelNamePR;
     private javax.swing.JTextField txtPostcodeCR;
     private javax.swing.JTextField txtPostcodeS;
+    private javax.swing.JTextField txtProductIDPR;
+    private javax.swing.JTextField txtProductNamePR;
     private javax.swing.JTextField txtRepairCostCR;
     private javax.swing.JTextField txtReportIDCR;
+    private javax.swing.JTextField txtSerialNumberPR;
+    private javax.swing.JTextField txtStaffID;
     private javax.swing.JTextField txtStaffIDS;
     private javax.swing.JTextField txtSurnameCR;
     private javax.swing.JTextField txtSurnameS;
@@ -821,5 +1216,7 @@ public class SupportForm extends javax.swing.JFrame {
     private javax.swing.JTextArea txtaAddressCR;
     private javax.swing.JTextArea txtaAddressS;
     private javax.swing.JTextArea txtaNatureOfProblemCR;
+    private javax.swing.JTextArea txtaNatureOfProblemPR;
+    private javax.swing.JTextArea txtaWorkReportPR;
     // End of variables declaration//GEN-END:variables
 }
